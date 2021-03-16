@@ -1,6 +1,7 @@
 package mailcow
 
 import (
+	"github.com/jpbede/mailcowgo/apis/alias"
 	"github.com/jpbede/mailcowgo/apis/domain"
 	"github.com/jpbede/mailcowgo/apis/mailbox"
 	"github.com/jpbede/mailcowgo/internal/transport"
@@ -10,8 +11,18 @@ import (
 type Client struct {
 	transport *transport.Client
 
+	alias   alias.Client
 	domain  domain.Client
 	mailbox mailbox.Client
+}
+
+// Alias returns a client for domain specific operations
+func (c *Client) Alias() alias.Client {
+	if c.alias == nil {
+		c.alias = alias.New(c.transport)
+	}
+
+	return c.alias
 }
 
 // Domain returns a client for domain specific operations

@@ -58,7 +58,11 @@ func (c *Client) Delete(ctx context.Context, path string, out interface{}, opts 
 func (c *Client) doRequest(ctx context.Context, method string, path string, out interface{}, opts ...RequestOption) error {
 	// create a new request
 	path = strings.TrimPrefix(path, "/")
-	req, err := http.NewRequest(method, c.BaseURL+"/"+path, nil)
+	baseURL := strings.TrimSuffix(c.BaseURL, "/")
+	if !strings.Contains(baseURL, "/api/v1") {
+		baseURL += "/api/v1"
+	}
+	req, err := http.NewRequest(method, baseURL+"/"+path, nil)
 	if err != nil {
 		return err
 	}
@@ -68,10 +72,9 @@ func (c *Client) doRequest(ctx context.Context, method string, path string, out 
 		c.HTTPClient.Transport = &ClientLogging{Logger: c.logger}
 	}
 
-	// add auth headers
+	// add headers
 	req.Header.Add("X-API-Key", c.APIKey)
-
-	req.Header.Set("User-Agent", "go-autodns/0.0.0")
+	req.Header.Set("User-Agent", "mailcowgo/0.0.0")
 
 	// run options
 	for i := range opts {
