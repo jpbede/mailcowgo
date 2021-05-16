@@ -1,8 +1,8 @@
 package mailcow_test
 
 import (
-	"github.com/jpbede/mailcowgo"
 	"github.com/stretchr/testify/assert"
+	"go.bnck.me/mailcow"
 	"testing"
 )
 

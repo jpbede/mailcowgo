@@ -1,7 +1,7 @@
 package alias
 
 import (
-	"github.com/jpbede/mailcowgo/internal/transport"
+	"go.bnck.me/mailcow/internal/transport"
 )
 
 type Alias struct {

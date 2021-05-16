@@ -1,7 +1,7 @@
 package dkim
 
 import (
-	"github.com/jpbede/mailcowgo/internal/transport"
+	"go.bnck.me/mailcow/internal/transport"
 )
 
 type client struct {

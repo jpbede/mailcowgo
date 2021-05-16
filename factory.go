@@ -2,7 +2,7 @@ package mailcow
 
 import (
 	"errors"
-	"github.com/jpbede/mailcowgo/internal/transport"
+	"go.bnck.me/mailcow/internal/transport"
 	"net/http"
 )
 

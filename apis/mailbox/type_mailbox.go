@@ -1,6 +1,6 @@
 package mailbox
 
-import "github.com/jpbede/mailcowgo/internal/transport"
+import "go.bnck.me/mailcow/internal/transport"
 
 type Mailbox struct {
 	MaxNewQuota  int64              `json:"max_new_quota"`

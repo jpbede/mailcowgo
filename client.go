@@ -1,10 +1,10 @@
 package mailcow
 
 import (
-	"github.com/jpbede/mailcowgo/apis/alias"
-	"github.com/jpbede/mailcowgo/apis/domain"
-	"github.com/jpbede/mailcowgo/apis/mailbox"
-	"github.com/jpbede/mailcowgo/internal/transport"
+	"go.bnck.me/mailcow/apis/alias"
+	"go.bnck.me/mailcow/apis/domain"
+	"go.bnck.me/mailcow/apis/mailbox"
+	"go.bnck.me/mailcow/internal/transport"
 )
 
 // Client represents the main client

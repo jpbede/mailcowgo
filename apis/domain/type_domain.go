@@ -1,6 +1,6 @@
 package domain
 
-import "github.com/jpbede/mailcowgo/internal/transport"
+import "go.bnck.me/mailcow/internal/transport"
 
 type Domain struct {
 	MaxNewMailboxQuota       int64              `json:"max_new_mailbox_quota"`

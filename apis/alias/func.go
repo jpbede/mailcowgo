@@ -2,7 +2,7 @@ package alias
 
 import (
 	"context"
-	"github.com/jpbede/mailcowgo/internal/transport"
+	"go.bnck.me/mailcow/internal/transport"
 )
 
 func (c *client) All(ctx context.Context) ([]*Alias, error) {

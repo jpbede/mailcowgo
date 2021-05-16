@@ -2,7 +2,7 @@ package dkim
 
 import (
 	"context"
-	"github.com/jpbede/mailcowgo/internal/transport"
+	"go.bnck.me/mailcow/internal/transport"
 )
 
 func (c *client) Get(ctx context.Context, domain string) (*DKIM, error) {
